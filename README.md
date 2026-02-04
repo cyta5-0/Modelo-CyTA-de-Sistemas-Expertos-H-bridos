@@ -21,4 +21,34 @@ El modelo se divide en tres niveles de orquestación:
 - **Base de Datos:** MariaDB / MySQL
 - **Estándar:** Documentación bajo PHPDoc y metadatos Schema.org (JSON-LD).
 
-- 1. Diagrama de Flujo del Sistema (Sequence Flow)Este esquema detalla el proceso desde que el usuario llena el formulario hasta que obtiene el análisis estratégico.Descripción del proceso:INPUT: El usuario provee Balances (Hechos) y Objetivos (Contexto).KNOWLEDGE FETCH: El motor PHP extrae las reglas (Fórmulas/Alertas) de la base de datos SQL.DETERMINISTIC INFERENCE: PHP evalúa las fórmulas. Si un ratio cruza un umbral, se dispara una alerta.PROMPT ORCHESTRATION: Se empaqueta el resultado técnico con el contexto de negocio en un bloque estructurado.GENERATIVE OUTPUT: El usuario entrega el "paquete" a la IA para el informe final.2. Diagrama de Bloques: Arquitectura Híbrida CyTA 5.0Este diagrama es ideal para el README.md de tu GitHub, ya que muestra la jerarquía de las capas.Las 3 Capas de Orquestación:Capa 1 (Base de Conocimiento - SQL): Almacena el "Saber Hacer" contable de forma estática.Capa 2 (Capa Lógica - PHP): El "Cerebro" que procesa y calcula, asegurando que no haya errores matemáticos.Capa 3 (Capa Cognitiva - IA): El "Consultor" que lee los resultados de la Capa 2 y los traduce a lenguaje humano estratégico.3. Resumen Técnico para tu documentación personalPara que recuerdes cómo "conjugar" las funciones en el código, guarda esta tabla:ComponenteArchivoFunción ClaveResponsabilidadRepositorio de Reglasmarcelop_accounting.sqlTablas ratios y alertasDefinir qué es "bueno" o "malo".Calculador Expertocontabilidad_logic.phpejecutar_motor_inferencia()Realizar la matemática pura.Redactor de Promptcontabilidad_logic.phpgenerar_prompt_ia()Unir números con objetivos.Orquestadoranalisis_financiero_completo.phpCarga de $_POSTRecibir datos y mostrar el resultado.
+1\. Diagrama de Flujo del Sistema (Sequence Flow)
+
+Este esquema detalla el proceso desde que el usuario llena el formulario hasta que obtiene el análisis estratégico.
+
+Descripción del proceso:
+
+* INPUT: El usuario provee Balances (Hechos) y Objetivos (Contexto).  
+* KNOWLEDGE FETCH: El motor PHP extrae las reglas (Fórmulas/Alertas) de la base de datos SQL.  
+* DETERMINISTIC INFERENCE: PHP evalúa las fórmulas. Si un ratio cruza un umbral, se dispara una alerta.  
+* PROMPT ORCHESTRATION: Se empaqueta el resultado técnico con el contexto de negocio en un bloque estructurado.  
+* GENERATIVE OUTPUT: El usuario entrega el "paquete" a la IA para el informe final.
+
+2\. Diagrama de Bloques: Arquitectura Híbrida CyTA 5.0
+
+Este diagrama es ideal para el README.md de tu GitHub, ya que muestra la jerarquía de las capas.
+
+Las 3 Capas de Orquestación:
+
+1. Capa 1 (Base de Conocimiento \- SQL): Almacena el "Saber Hacer" contable de forma estática.  
+2. Capa 2 (Capa Lógica \- PHP): El "Cerebro" que procesa y calcula, asegurando que no haya errores matemáticos.  
+3. Capa 3 (Capa Cognitiva \- IA): El "Consultor" que lee los resultados de la Capa 2 y los traduce a lenguaje humano estratégico.
+
+3\. Resumen Técnico para tu documentación personal
+
+Para que recuerdes cómo "conjugar" las funciones en el código, guarda esta tabla:  
+Componente  
+Componente,Archivo,Función Clave,Responsabilidad  
+Repositorio de Reglas,marcelop\_accounting.sql,Tablas ratios y alertas,"Definir qué es ""bueno"" o ""malo""."  
+Calculador Experto,contabilidad\_logic.php,ejecutar\_motor\_inferencia(),Realizar la matemática pura.  
+Redactor de Prompt,contabilidad\_logic.php,generar\_prompt\_ia(),Unir números con objetivos.  
+Orquestador,analisis\_financiero\_completo.php,Carga de $\_POST,Recibir datos y mostrar el resultado.
